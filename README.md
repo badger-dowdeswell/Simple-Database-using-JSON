@@ -19,3 +19,5 @@ The application reads and writes JSON-format files using a Visual Studio package
 - The Package Manager should say this after the package has been downloaded and installed:
 
   Successfully installed 'System.Text.Json -Version 4.7.2' to Simple_Database
+
+When running the Simple_Database application, you may see a security vunerability warning about this package in the Console window. Do not be concerned. The vunerability relates to an issue if the Serializer is used in C# Web applications, not Windows Desktop Forms applications.
