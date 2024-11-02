@@ -8,7 +8,14 @@ stored as separate Java Script Object Notation (JSON) format text files.
 JSON is an open standard file format that uses human-readable text to store information as data objects consisting of attribute–value pairs and arrays. You can read more about the JSON standard on Wikipedia: https://en.wikipedia.org/wiki/JSON
 
 ## Installing the JSON Serializer components into Visual Studio
-The application reads and writes JSON-form files using an Visual Studio package that is not installed automatically.
+The application reads and writes JSON-format files using a Visual Studio package called _System.Text.Json -Version 4.7.2_ that is not installed automatically.
 
 - Open your Simple_Database project in Visual Studio.
 - Use the menu to access Tools > NuGet Package Manager > Package Manager Console to open the Package Manager Console window.
+- Paste this command into the Package Manager Console Window beside the prompt PM>
+
+  NuGet\Install-Package System.Text.Json -Version 4.7.2
+          
+- The Package Manager should say this after the package has been downloaded and installed:
+
+  Successfully installed 'System.Text.Json -Version 4.7.2' to Simple_Database
