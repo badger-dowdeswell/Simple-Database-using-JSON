@@ -30,6 +30,7 @@ namespace Simple_Database {
     public partial class FormMain : Form {
 
         Form formCustomer;
+        Form formSignIn;
 
         //
         // Constructor
@@ -38,7 +39,8 @@ namespace Simple_Database {
             InitializeComponent();
 
             // Create the Customer Maintenance form.
-            formCustomer = new FormCustomer(this);            
+            formCustomer = new FormCustomer(this);  
+            formSignIn = new FormSignIn(this);
         }
 
         //
@@ -57,6 +59,15 @@ namespace Simple_Database {
             // Tell FormCustomer to show itself as a modal dialog without
             // hiding this form.
             formCustomer.ShowDialog();
+        }
+
+        //
+        // labelSignIn_Click
+        // =================
+        private void labelSignIn_Click(object sender, EventArgs e) {
+            // Tell FormSignIn to show itself as a modal dialog without
+            // hiding this form.
+            formSignIn.ShowDialog();
         }
     }
 }

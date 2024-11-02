@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.labelManageCustomers = new System.Windows.Forms.Label();
+            this.labelSignIn = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelManageCustomers
@@ -37,11 +38,23 @@
             this.labelManageCustomers.Text = "Manage Customers";
             this.labelManageCustomers.Click += new System.EventHandler(this.labelManageCustomers_Click);
             // 
+            // labelSignIn
+            // 
+            this.labelSignIn.AutoSize = true;
+            this.labelSignIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSignIn.Location = new System.Drawing.Point(61, 132);
+            this.labelSignIn.Name = "labelSignIn";
+            this.labelSignIn.Size = new System.Drawing.Size(158, 20);
+            this.labelSignIn.TabIndex = 1;
+            this.labelSignIn.Text = "Sign In to the system";
+            this.labelSignIn.Click += new System.EventHandler(this.labelSignIn_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelSignIn);
             this.Controls.Add(this.labelManageCustomers);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -55,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelManageCustomers;
+        private System.Windows.Forms.Label labelSignIn;
     }
 }
 
