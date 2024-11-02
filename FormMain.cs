@@ -7,7 +7,7 @@
 //
 // This project demonstrates how to build a
 // custom class to manage each database table
-// in a way similiar to a SQL client might
+// in a way similiar to how an SQL client might
 // access a database. However, the tables are
 // stored as separate Java Script Object
 // Notation (JSON) format text files.  
@@ -32,15 +32,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace Simple_Database {
     public partial class FormMain : Form {
+
+        Form formCustomer;
 
         //
         // Constructor
         // ===========
         public FormMain() {
             InitializeComponent();
+
+            // Create the Customer Maintenance form.
+            formCustomer = new FormCustomer(this);            
         }
 
         //
@@ -48,6 +54,17 @@ namespace Simple_Database {
         // =============
         private void FormMain_Load(object sender, EventArgs e) {
 
+        }
+
+        //
+        // labelManageCustomers_Click
+        // ==========================
+        private void labelManageCustomers_Click(object sender, EventArgs e) {
+            // this.Visible = false;
+
+            // Tell FormCustomer to show itself as a modal dialog without
+            // hiding this form.
+            formCustomer.ShowDialog();
         }
     }
 }
