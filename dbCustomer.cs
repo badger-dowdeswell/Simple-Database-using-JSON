@@ -93,6 +93,50 @@ namespace Simple_Database {
             }
             return found;
         }
+
+        //
+        // Update
+        // ======
+        // This function updates an existing customer or creates a new one.
+        // Before calling this function, the calling form needs to update
+        // each of the data fields.
+        //
+        public Boolean Update(string ID) {
+            Boolean updated = false;
+            string json = "";
+            lastError = "";
+
+            if (directoryName.Trim() == "") {
+                lastError = "Database directory name is blank.";
+            } else if (tableName.Trim() == "") {
+                lastError = "Table name is blank.";
+            } else if (ID.Trim() == "") {
+                lastError = "The record ID is blank"; 
+            } else {
+                // The options variable sets up the parameters to make the Serialiszer 
+                // format the JSON values indented on individual lines. They are easier
+                // to read that way when the file is opened later in a text editor.
+                var options = new JsonSerializerOptions() {
+                    WriteIndented = true
+                };
+
+                // Create the JSON format record for the table
+                json = JsonSerializer.Serialize(data, options);
+
+                // Write the record to the table
+                try {
+                    StreamWriter writer = new StreamWriter(directoryName + "\\Database\\" + tableName + "\\" + ID + ".txt");
+                    writer.Write(json);                    
+                    writer.Close();
+                    updated = true;
+                } catch (Exception e) {
+                    // the record could not be written, but the catch stops the 
+                    // system crashing.
+                    lastError = "Could not write JSON text to the file. Error returned: \n\n" + e.Message;
+                }
+            }
+            return updated;
+        }
     }
 
     //
@@ -114,6 +158,7 @@ namespace Simple_Database {
         private string customerID;
         private string customerName;
         private string customerAddress;
+        private string password;
 
         public string CustomerID {
             get {return customerID; }
@@ -128,6 +173,11 @@ namespace Simple_Database {
         public string CustomerAddress {
             get {return customerAddress; }
             set {customerAddress = value; }
+        }
+
+        public string Password {
+            get {return password; }
+            set {password = value; }
         }
     }
 }
