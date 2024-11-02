@@ -21,3 +21,12 @@ The application reads and writes JSON-format files using a Visual Studio package
   Successfully installed 'System.Text.Json -Version 4.7.2' to Simple_Database
 
 When running the Simple_Database application, you may see a security vunerability warning about this package in the Console window. Do not be concerned. The vunerability relates to an issue if the Serializer is used in C# Web applications, not Windows Desktop Forms applications.
+
+## Creating the Database folders
+
+GitHub does not store example database folders for this project. They need to be created individually on each developers computer and shared separately. Follow these steps to set up a local copy of the database:
+
+- Create a new folder in the Simple_Database\bin\Debug folder called Database (note the capital D in Database)
+- create a new folder called customer (lowercase c) ih the folder Database.
+
+The program will then let you create and edit new customer records inside the customer folder. These can be examined and changed manually using a text editor like NotePad++
