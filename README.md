@@ -24,7 +24,9 @@ When running the Simple_Database application, you may see a security vunerabilit
 
 ## Creating the Database folders
 
-GitHub does not store example database folders for this project. They need to be created individually on each developers computer and shared separately. Follow these steps to set up a local copy of the database:
+GitHub does not store example database folders for this project. They need to be created individually on each developers computer and shared separately between the team members if you wish to. 
+
+Follow these steps to set up a local copy of the database on your computer:
 
 - Create a new folder in the Simple_Database\bin\Debug folder called Database (note the capital D in Database)
 - create a new folder called customer (lowercase c) ih the folder Database.
