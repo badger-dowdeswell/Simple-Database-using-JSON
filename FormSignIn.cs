@@ -29,6 +29,8 @@ namespace Simple_Database {
         // FormSignIn_Load
         // ===============
         private void FormSignIn_Load(object sender, EventArgs e) {
+            textBoxCustomerID.Text = "";
+            textBoxPassword.Text = "";
         }
 
         //
