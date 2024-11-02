@@ -1,6 +1,0 @@
-{
-   "customerID": "119",
-   "customerName": "Second customer code 119",
-   "customerAddress": "Address line for customer 119"
-}   
-   

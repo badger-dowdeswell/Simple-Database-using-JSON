@@ -1,6 +1,0 @@
-{
-   "customerID": "123",
-   "customerName": "First customer",
-   "customerAddress": "Address line"
-}   
-   
