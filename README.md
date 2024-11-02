@@ -29,6 +29,7 @@ GitHub does not store example database folders for this project. They need to be
 Follow these steps to set up a local copy of the database on your computer:
 
 - Create a new folder in the Simple_Database\bin\Debug folder called Database (note the capital D in Database)
-- create a new folder called customer (lowercase c) ih the folder Database.
+  
+- Create a new folder called customer (lowercase c) ih the folder Database.
 
 The program will then let you create and edit new customer records inside the customer folder. These can be examined and changed manually using a text editor like NotePad++
