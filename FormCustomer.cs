@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,8 @@ namespace Simple_Database {
     public partial class FormCustomer : Form {
 
         Form FormParent;
+        //string directoryName = Directory.GetCurrentDirectory();
+        dbCustomer customer = new dbCustomer();
 
         //
         // Constructor
@@ -37,6 +40,7 @@ namespace Simple_Database {
             // so we know where to go back to when we close
             // this form.
             this.FormParent = FormParent;
+            //customer = new dbCustomer();
         }
 
         //
@@ -61,6 +65,30 @@ namespace Simple_Database {
 
             // Go back to the parent of this form which is FormMain.
             FormParent.Show();
-        }        
+        }
+
+        //
+        // textBoxCustomerID_Leave
+        // =======================
+        private void textBoxCustomerID_Leave(object sender, EventArgs e) {
+            string customerID = textBoxCustomerID.Text.Trim();
+            if (customerID != "") {
+                if (customer.Read(customerID)) {
+                    textBoxCustomerName.Text = customer.data.CustomerName;
+                    textBoxAddress.Text = customer.data.CustomerAddress; 
+                } else {
+                    MessageBox.Show("Customer " + customerID + " not found.");
+                    textBoxCustomerID.Focus();
+                }
+            }
+        }
+
+        //
+        // textBoxCustomerID_Enter
+        // =======================
+        private void textBoxCustomerID_Enter(object sender, EventArgs e) {
+            textBoxCustomerName.Text = "";
+            textBoxAddress.Text = "";
+        }
     }
 }
