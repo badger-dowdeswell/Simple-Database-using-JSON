@@ -35,10 +35,17 @@ using System.Windows.Forms;
 
 namespace Simple_Database {
     public partial class FormMain : Form {
+
+        //
+        // Constructor
+        // ===========
         public FormMain() {
             InitializeComponent();
         }
 
+        //
+        // FormMain_Load
+        // =============
         private void FormMain_Load(object sender, EventArgs e) {
 
         }
