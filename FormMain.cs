@@ -22,6 +22,7 @@
 // Revision History
 // ================
 // 02.11.2024 BRD Original version.
+// 04.11.2024 BRD Fixed some small errors.  
 //
 using System;
 using System.Windows.Forms;
