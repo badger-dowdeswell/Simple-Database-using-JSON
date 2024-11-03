@@ -4,9 +4,7 @@ using System.Windows.Forms;
 namespace Simple_Database {
     public partial class FormSignIn : Form {
 
-        Form FormParent;
-
-        string customerID = "";
+        Form FormParent;        
         
         // Create the database object to handle the reading
         // of the customer data needed to sign in.

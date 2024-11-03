@@ -150,7 +150,9 @@
             this.Controls.Add(this.textBoxCustomerName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonClose);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormCustomer";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Maintain Customer Information";
             this.Load += new System.EventHandler(this.FormCustomer_Load);
