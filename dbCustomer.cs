@@ -1,11 +1,11 @@
 ﻿//
-// MAINTAIN CUSTOMER INFORMATION
-// =============================
-// This form is used to manage the creation
-// of new customers in the Customer database
-// table. It also allows the information for
-// each customer to be changed and updated
-// later.
+// dbCustomer DATABASE TABLE FOR CUSTOMERS
+// =======================================
+// This is a class that manages the customer
+// table for the database. It is adapted from
+// the basic database class and has a customised
+// Data class that provides access to the fields
+// in the customer table.
 //
 // Revision History
 // ================
@@ -14,7 +14,6 @@
 using System.IO;
 using System.Text.Json;
 using System;
-using System.Runtime.Remoting.Messaging;
 
 namespace Simple_Database {
     internal class dbCustomer {
@@ -35,7 +34,6 @@ namespace Simple_Database {
             // Set the name of the database table in the Database folder. It will
             // be a subdirectory of the Database folder located below the bin/Debug
             // folder for this project.
-            //
             tableName = "customer"; 
         }
 
