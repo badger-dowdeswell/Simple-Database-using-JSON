@@ -91,6 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbCustomer.cs" />
+    <Compile Include="dbProduct.cs" />
     <Compile Include="FormSignIn.cs">
       <SubType>Form</SubType>
     </Compile>

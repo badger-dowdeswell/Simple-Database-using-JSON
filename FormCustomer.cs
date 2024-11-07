@@ -31,6 +31,8 @@ namespace Simple_Database {
         // and updating of customer data.
         dbCustomer customer = new dbCustomer();
 
+        dbProduct product = new dbProduct(); 
+
         //
         // Constructor
         // ===========
@@ -47,7 +49,7 @@ namespace Simple_Database {
         //
         // FormCustomer_Load
         // =================
-        private void FormCustomer_Load(object sender, EventArgs e) {
+        private void FormCustomer_Load(object sender, EventArgs e) {            
         }
        
         //

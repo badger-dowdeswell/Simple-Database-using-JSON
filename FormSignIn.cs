@@ -26,9 +26,7 @@ namespace Simple_Database {
         //
         // FormSignIn_Load
         // ===============
-        private void FormSignIn_Load(object sender, EventArgs e) {
-            textBoxCustomerID.Text = "";
-            textBoxPassword.Text = "";
+        private void FormSignIn_Load(object sender, EventArgs e) {                  
         }
 
         //
@@ -68,6 +66,6 @@ namespace Simple_Database {
 
             // Go back to the parent of this form which is FormMain.
             FormParent.Show();
-        }        
+        }                
     }
 }
