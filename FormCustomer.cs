@@ -29,9 +29,7 @@ namespace Simple_Database {
         
         // Create the database object to handle the reading
         // and updating of customer data.
-        dbCustomer customer = new dbCustomer();
-
-        dbProduct product = new dbProduct(); 
+        dbCustomer customer = new dbCustomer();        
 
         //
         // Constructor
@@ -49,34 +47,28 @@ namespace Simple_Database {
         //
         // FormCustomer_Load
         // =================
-        private void FormCustomer_Load(object sender, EventArgs e) {            
+        private void FormCustomer_Load(object sender, EventArgs e) { 
+            comboBoxCustomerID.Items.Clear();
+            string[] fileList = customer.Query();           
+            comboBoxCustomerID.Items.AddRange(fileList);    
         }
        
         //
-        // textBoxCustomerID_Enter
-        // =======================
-        private void textBoxCustomerID_Enter(object sender, EventArgs e) {
-            textBoxCustomerName.Text = "";
-            textBoxAddress.Text = "";
-            textBoxPassword.Text = "";
-        }
-                
-        //
-        // textBoxCustomerID_TextChanged
-        // =============================
-        private void textBoxCustomerID_TextChanged(object sender, EventArgs e) {
-            customerID = textBoxCustomerID.Text.Trim();
-            customer.data.CustomerID = customerID;            
+        // comboBoxCustomerID_TextChanged
+        // ==============================
+        private void comboBoxCustomerID_TextChanged(object sender, EventArgs e) {
+            customerID = comboBoxCustomerID.Text.Trim();
+            customer.data.CustomerID = customerID; 
         }
 
         //
-        // textBoxCustomerID_Leave
-        // =======================
-        private void textBoxCustomerID_Leave(object sender, EventArgs e) {
+        // comboBoxCustomerID_SelectionChangeCommitted
+        // ===========================================
+        private void comboBoxCustomerID_SelectionChangeCommitted(object sender, EventArgs e) {
             DialogResult result;
 
             if (!creating) {
-                customerID = textBoxCustomerID.Text.Trim();
+                customerID = comboBoxCustomerID.SelectedItem.ToString();
                 if (customerID != "") {
                     if (customer.Read(customerID)) {
                         textBoxCustomerName.Text = customer.data.CustomerName;
@@ -90,14 +82,43 @@ namespace Simple_Database {
                             creating = true;
                             textBoxCustomerName.Focus();
                         } else {
-                            textBoxCustomerID.Text = "";
-                            textBoxCustomerID.Focus();
+                            comboBoxCustomerID.Text = "";
+                            comboBoxCustomerID.Focus();
                         }
                     }
                 }
             }
         }
 
+        //
+        // comboBoxCustomerID_Leave
+        // ========================
+        private void comboBoxCustomerID_Leave(object sender, EventArgs e) {
+            DialogResult result;
+
+            if (!creating) {
+                 customerID = comboBoxCustomerID.Text;
+                if (customerID != "") {
+                    if (customer.Read(customerID)) {
+                        textBoxCustomerName.Text = customer.data.CustomerName;
+                        textBoxAddress.Text = customer.data.CustomerAddress; 
+                        textBoxPassword.Text = customer.data.Password;
+                    } else {
+                        result = MessageBox.Show("Click Yes to create a new customer",                          
+                                                 "Customer does not exist",
+                                                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes) {
+                            creating = true;
+                            textBoxCustomerName.Focus();
+                        } else {
+                            comboBoxCustomerID.Text = "";
+                            comboBoxCustomerID.Focus();
+                        }
+                    }
+                }
+            }
+        }
+                
         //
         // textBoxCustomerName_TextChanged
         // ===============================
@@ -124,9 +145,18 @@ namespace Simple_Database {
         // ==================
         private void buttonUpdate_Click(object sender, EventArgs e) {
             customer.Update(customerID);  
-            textBoxCustomerID.Text = "";
+            comboBoxCustomerID.Text = "";
+            textBoxCustomerName.Text = "";
+            textBoxAddress.Text = ""; 
+            textBoxPassword.Text = "";
             creating = false;
-            textBoxCustomerID.Focus();
+
+            // Update the list in the combo box to add any
+            // new customer to the list.
+            comboBoxCustomerID.Items.Clear();
+            string[] fileList = customer.Query();           
+            comboBoxCustomerID.Items.AddRange(fileList);    
+            comboBoxCustomerID.Focus();
         }
 
         //
@@ -145,6 +175,6 @@ namespace Simple_Database {
 
             // Go back to the parent of this form which is FormMain.
             FormParent.Show();
-        }        
+        }
     }
 }
