@@ -10,6 +10,9 @@
 // Revision History
 // ================
 // 02.11.2024 BRD Original version.
+// 12.11.2024 BRD Changed the Customer ID text box 
+//                to be a combo box and implemented
+//                a simple query function.
 //
 using System;
 using System.Windows.Forms;

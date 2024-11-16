@@ -56,8 +56,7 @@ namespace Simple_Database {
         // 
         public Boolean Read(string ID) {  
             lastError = "";
-            Boolean found = false;
-            Data newData = new Data();
+            Boolean found = false;            
             string json;
 
             if (directoryName.Trim() == "") {
@@ -70,17 +69,14 @@ namespace Simple_Database {
                 // Open the JSON file, read to the end, and convert the JSON data to a single object
                 // with named fields. This is called deserialising.
                 try {
-                    StreamReader reader = new StreamReader(directoryName + "\\Database\\" + tableName + "\\" + ID) {
-
-                    };
+                    StreamReader reader = new StreamReader(directoryName + "\\Database\\" + tableName + "\\" + ID); 
                     json = reader.ReadToEnd();
                     reader.Close();
 
                     // The options variable sets up the parameters to make the DeSerialiszer 
                     // case insensitive.
                     var JsonOptions = new JsonSerializerOptions();
-                    JsonOptions.PropertyNameCaseInsensitive = true;
-                    
+                    JsonOptions.PropertyNameCaseInsensitive = true;                    
                     data = JsonSerializer.Deserialize<Data>(json, JsonOptions);
                     found = true;
 
@@ -142,8 +138,8 @@ namespace Simple_Database {
         // =====
         // Returns a string array containing the IDs of all
         // the records in the table.
-        public string[] Query() {
-            //string path = directoryName + "\\Database\\" + tableName;
+        //
+        public string[] Query() {            
             string[] fileList = Directory.GetFiles(directoryName + "\\Database\\" + tableName);
             //int namePtr = path.Length + 1;
 
@@ -174,8 +170,7 @@ namespace Simple_Database {
         private string customerName;
         private string customerAddress;
         private string emailAddress;
-        private string password;
-        double price = 0.00; 
+        private string password;        
 
         public string CustomerID {
             get {return customerID; }
@@ -200,11 +195,6 @@ namespace Simple_Database {
         public string EmailAddress {
             get {return emailAddress; }
             set {emailAddress = value; }
-        }
-
-        public double Price {
-            get {return price; }
-            set {price = value; }
-        }
+        }        
     }
 }
