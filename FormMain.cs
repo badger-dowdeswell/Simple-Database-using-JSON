@@ -47,8 +47,7 @@ namespace Simple_Database {
         //
         // FormMain_Load
         // =============
-        private void FormMain_Load(object sender, EventArgs e) {
-
+        private void FormMain_Load(object sender, EventArgs e) {            
         }
 
         //

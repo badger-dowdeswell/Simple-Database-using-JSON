@@ -170,7 +170,8 @@ namespace Simple_Database {
         private string customerName;
         private string customerAddress;
         private string emailAddress;
-        private string password;        
+        private string password; 
+        private double price;
 
         public string CustomerID {
             get {return customerID; }
@@ -195,6 +196,11 @@ namespace Simple_Database {
         public string EmailAddress {
             get {return emailAddress; }
             set {emailAddress = value; }
-        }        
+        }    
+        
+        public double Price {
+            get {return price; }
+            set {price = value; }
+        }  
     }
 }
