@@ -1,4 +1,4 @@
-﻿namespace Simple_Database {
+﻿namespace db {
     partial class FormMain {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,6 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

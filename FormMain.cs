@@ -27,7 +27,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Simple_Database {
+namespace db {
     public partial class FormMain : Form {
 
         Form formCustomer;

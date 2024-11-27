@@ -1,4 +1,4 @@
-﻿namespace Simple_Database {
+﻿namespace db {
     partial class FormCustomer {
         /// <summary>
         /// Required designer variable.
@@ -140,7 +140,7 @@
             this.comboBoxCustomerID.Location = new System.Drawing.Point(57, 73);
             this.comboBoxCustomerID.Name = "comboBoxCustomerID";
             this.comboBoxCustomerID.Size = new System.Drawing.Size(364, 33);
-            this.comboBoxCustomerID.TabIndex = 0;            
+            this.comboBoxCustomerID.TabIndex = 0;
             this.comboBoxCustomerID.SelectionChangeCommitted += new System.EventHandler(this.comboBoxCustomerID_SelectionChangeCommitted);
             this.comboBoxCustomerID.TextChanged += new System.EventHandler(this.comboBoxCustomerID_TextChanged);
             this.comboBoxCustomerID.Leave += new System.EventHandler(this.comboBoxCustomerID_Leave);

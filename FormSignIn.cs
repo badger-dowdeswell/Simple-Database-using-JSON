@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Simple_Database {
+namespace db {
     public partial class FormSignIn : Form {
 
         Form FormParent;        
